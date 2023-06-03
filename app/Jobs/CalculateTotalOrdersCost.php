@@ -10,7 +10,7 @@ use Illuminate\Queue\SerializesModels;
 use App\Models\Order;
 
 
-class CalculateTotalOrderCost implements ShouldQueue
+class CalculateTotalOrdersCost implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
