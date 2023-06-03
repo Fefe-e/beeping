@@ -18,12 +18,11 @@ class CalculateTotalOrdersCost implements ShouldQueue
     {
         $totalCost = Order::with('orderLines.product')
             ->get()
-            ->flatMap(function ($order) {
-                return $order->orderLines->map(function ($orderLine) {
+            ->sum(function ($order) {
+                return $order->orderLines->sum(function ($orderLine) {
                     return $orderLine->qty * $orderLine->product->cost;
                 });
-            })
-            ->sum();
+            });
 
         echo "El costo total de todas las órdenes es: $totalCost";
     }
