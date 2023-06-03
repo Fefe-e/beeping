@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Jobs\CalculateTotalOrderCost;
+use App\Jobs\CalculateTotalOrdersCost;
 
 class CommandTotalOrdersCost extends Command
 {
@@ -38,6 +38,6 @@ class CommandTotalOrdersCost extends Command
      */
     public function handle()
     {
-        CalculateTotalOrderCost::dispatch();
+        CalculateTotalOrdersCost::dispatch();
     }
 }
